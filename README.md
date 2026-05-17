@@ -1,4 +1,4 @@
-# AI Customer Support Agent
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/d36770ce-51bd-449d-a847-ea873e50b41b" /># AI Customer Support Agent
 
 An intelligent AI-powered customer support system built using LangGraph, RAG, tool calling, and conversational memory.
 
@@ -27,6 +27,34 @@ An intelligent AI-powered customer support system built using LangGraph, RAG, to
 - FAISS / Vector Database
 
 ---
+
+```mermaid
+flowchart TD
+
+    A[User Query] --> B[Router / Intent Detection]
+
+    B --> C{Decision Engine}
+
+    C --> D[Direct LLM Response]
+    C --> E[RAG Retrieval]
+    C --> F[Tool Calling]
+    C --> G[Human Escalation]
+
+    E --> H[Vector Database / Knowledge Base]
+
+    F --> I[External APIs / Tools]
+
+    D --> J[Generate Final Response]
+    E --> J
+    F --> J
+
+    G --> K[Human Support Agent]
+    K --> J
+
+    J --> L[Memory Update / PostgreSQL]
+
+    L --> M[Response Returned to User]
+```
 
 ## Project Structure
 
